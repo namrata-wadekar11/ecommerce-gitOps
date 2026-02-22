@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/namrata-wadekar11/ecommerce-gitOps.git
     targetRevision: main
-    path: apps/ecommerce
+    path: apps/ecommerce/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: ecommerce
