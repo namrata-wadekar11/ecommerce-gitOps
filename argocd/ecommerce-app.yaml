@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<YOUR-USERNAME>/ecommerce-gitops.git
+    repoURL: https://github.com/namrata-wadekar11/ecommerce-gitOps.git
     targetRevision: main
-    path: apps/ecommerce/overlays/dev
+    path: apps/ecommerce
   destination:
     server: https://kubernetes.default.svc
     namespace: ecommerce
@@ -16,3 +16,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
