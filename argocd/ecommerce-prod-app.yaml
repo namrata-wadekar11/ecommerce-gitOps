@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ecommerce-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/namrata-wadekar11/ecommerce-gitOps.git
+    targetRevision: main
+    path: apps/ecommerce/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ecommerce-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
